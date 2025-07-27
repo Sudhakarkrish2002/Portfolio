@@ -1,0 +1,627 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700;900&family=JetBrains+Mono:wght@400;700&display=swap');
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+:root {
+  --accent-blue: #38bdf8;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #0a0a0a;
+  color: #fff;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 0.01em;
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  background: rgba(10,10,10,0.95);
+  border-bottom: 1px solid var(--accent-blue);
+  box-shadow: 0 2px 8px 0 rgba(56,189,248,0.05);
+}
+
+section {
+  padding: 5rem 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--accent-blue);
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  letter-spacing: 0.01em;
+}
+
+.card {
+  background: rgba(255,255,255,0.03);
+  border: 1.5px solid var(--accent-blue);
+  border-radius: 1.25rem;
+  box-shadow: 0 8px 32px 0 rgba(56,189,248,0.15);
+  backdrop-filter: blur(8px);
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+.card:hover {
+  box-shadow: 0 16px 40px 0 rgba(56,189,248,0.25);
+  transform: translateY(-6px) scale(1.03);
+}
+
+.button {
+  background: var(--accent-blue);
+  color: #0a0a0a;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  padding: 0.75rem 2rem;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px 0 rgba(56,189,248,0.10);
+}
+.button:hover {
+  background: #60a5fa;
+  color: #fff;
+}
+
+.section-divider {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent-blue), transparent);
+  border-radius: 1px;
+  margin: 2rem auto 3rem auto;
+  width: 120px;
+}
+
+.icon-skill {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  transition: transform 0.2s;
+}
+.icon-skill:hover {
+  transform: scale(1.15);
+}
+
+.skill-name {
+  color: #e5e7eb;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 0.5rem;
+  letter-spacing: 0.01em;
+}
+
+/* Hero Section Enhanced Styles */
+.hero-section {
+  position: relative;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(56,189,248,0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(56,189,248,0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(56,189,248,0.05) 0%, transparent 50%);
+  animation: heroGlow 8s ease-in-out infinite alternate;
+}
+
+.hero-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2338bdf8' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  animation: heroPattern 20s linear infinite;
+}
+
+@keyframes heroGlow {
+  0% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes heroPattern {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  100% {
+    transform: translateX(-60px) translateY(-60px);
+  }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  max-width: 4xl;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.hero-title {
+  font-size: clamp(3rem, 8vw, 7rem);
+  font-weight: 900;
+  background: linear-gradient(135deg, #38bdf8 0%, #60a5fa 50%, #93c5fd 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1.5rem;
+  animation: titleGlow 3s ease-in-out infinite alternate;
+  text-shadow: 0 0 30px rgba(56,189,248,0.3);
+}
+
+@keyframes titleGlow {
+  0% {
+    filter: drop-shadow(0 0 20px rgba(56,189,248,0.3));
+  }
+  100% {
+    filter: drop-shadow(0 0 40px rgba(56,189,248,0.6));
+  }
+}
+
+.hero-subtitle {
+  font-size: clamp(1.25rem, 4vw, 2rem);
+  color: #60a5fa;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  animation: subtitleFloat 4s ease-in-out infinite;
+}
+
+@keyframes subtitleFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.hero-description {
+  font-size: clamp(1rem, 3vw, 1.125rem);
+  color: #94a3b8;
+  max-width: 2xl;
+  margin: 0 auto 2rem auto;
+  line-height: 1.8;
+  animation: descriptionFade 2s ease-out;
+}
+
+@keyframes descriptionFade {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  animation: buttonsSlideUp 1s ease-out 0.5s both;
+}
+
+@keyframes buttonsSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-button {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #38bdf8 0%, #60a5fa 100%);
+  color: #0a0a0a;
+  border: none;
+  border-radius: 0.75rem;
+  font-weight: 700;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 
+    0 4px 15px rgba(56,189,248,0.3),
+    0 0 0 1px rgba(56,189,248,0.1);
+  cursor: pointer;
+}
+
+.hero-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
+}
+
+.hero-button:hover::before {
+  left: 100%;
+}
+
+.hero-button:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 
+    0 8px 25px rgba(56,189,248,0.4),
+    0 0 0 2px rgba(56,189,248,0.2);
+  background: linear-gradient(135deg, #60a5fa 0%, #93c5fd 100%);
+}
+
+.hero-button:active {
+  transform: translateY(-1px) scale(1.02);
+}
+
+.hero-button-secondary {
+  background: transparent;
+  color: #38bdf8;
+  border: 2px solid #38bdf8;
+  box-shadow: 
+    0 4px 15px rgba(56,189,248,0.1),
+    0 0 0 1px rgba(56,189,248,0.1);
+}
+
+.hero-button-secondary:hover {
+  background: rgba(56,189,248,0.1);
+  color: #60a5fa;
+  border-color: #60a5fa;
+  box-shadow: 
+    0 8px 25px rgba(56,189,248,0.2),
+    0 0 0 2px rgba(56,189,248,0.2);
+}
+
+/* Floating Elements */
+.floating-element {
+  position: absolute;
+  opacity: 0.1;
+  animation: float 6s ease-in-out infinite;
+}
+
+.floating-element:nth-child(1) {
+  top: 20%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.floating-element:nth-child(2) {
+  top: 60%;
+  right: 15%;
+  animation-delay: 2s;
+}
+
+.floating-element:nth-child(3) {
+  bottom: 30%;
+  left: 20%;
+  animation-delay: 4s;
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: scrollBounce 2s ease-in-out infinite;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.scroll-indicator::before {
+  content: '';
+  width: 2px;
+  height: 30px;
+  background: linear-gradient(to bottom, #38bdf8, transparent);
+  display: block;
+  margin: 0 auto;
+  border-radius: 1px;
+}
+
+@keyframes scrollBounce {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(10px);
+  }
+}
+
+/* Responsive Hero */
+@media (min-width: 768px) {
+  .hero-buttons {
+    flex-direction: row;
+  }
+  
+  .hero-content {
+    padding: 0 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 2rem 0;
+  }
+  
+  .hero-title {
+    font-size: clamp(2.5rem, 10vw, 4rem);
+  }
+  
+  .hero-subtitle {
+    font-size: clamp(1.125rem, 5vw, 1.5rem);
+  }
+}
+
+/* Skill Card Movement Animations */
+.skill-card {
+  animation: float 6s ease-in-out infinite;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(56,189,248,0.1), transparent);
+  transition: left 0.5s;
+}
+
+.skill-card:hover::before {
+  left: 100%;
+}
+
+.skill-card:hover {
+  transform: translateY(-12px) scale(1.08) rotateY(5deg);
+  box-shadow: 
+    0 20px 40px rgba(56,189,248,0.3),
+    0 0 20px rgba(56,189,248,0.2),
+    inset 0 0 20px rgba(56,189,248,0.1);
+  border-color: #60a5fa;
+}
+
+.skill-card:active {
+  transform: translateY(-8px) scale(1.05);
+  transition: all 0.1s;
+}
+
+/* Floating Animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-8px) rotate(1deg);
+  }
+  50% {
+    transform: translateY(-4px) rotate(0deg);
+  }
+  75% {
+    transform: translateY(-8px) rotate(-1deg);
+  }
+}
+
+/* Staggered Animation for Skill Cards */
+.skill-card:nth-child(1) { animation-delay: 0s; }
+.skill-card:nth-child(2) { animation-delay: 0.2s; }
+.skill-card:nth-child(3) { animation-delay: 0.4s; }
+.skill-card:nth-child(4) { animation-delay: 0.6s; }
+.skill-card:nth-child(5) { animation-delay: 0.8s; }
+.skill-card:nth-child(6) { animation-delay: 1s; }
+.skill-card:nth-child(7) { animation-delay: 1.2s; }
+.skill-card:nth-child(8) { animation-delay: 1.4s; }
+.skill-card:nth-child(9) { animation-delay: 1.6s; }
+.skill-card:nth-child(10) { animation-delay: 1.8s; }
+.skill-card:nth-child(11) { animation-delay: 2s; }
+.skill-card:nth-child(12) { animation-delay: 2.2s; }
+.skill-card:nth-child(13) { animation-delay: 2.4s; }
+.skill-card:nth-child(14) { animation-delay: 2.6s; }
+.skill-card:nth-child(15) { animation-delay: 2.8s; }
+.skill-card:nth-child(16) { animation-delay: 3s; }
+.skill-card:nth-child(17) { animation-delay: 3.2s; }
+.skill-card:nth-child(18) { animation-delay: 3.4s; }
+.skill-card:nth-child(19) { animation-delay: 3.6s; }
+.skill-card:nth-child(20) { animation-delay: 3.8s; }
+
+/* Skill Icon Movement */
+.skill-icon {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  filter: drop-shadow(0 0 8px rgba(56,189,248,0.3));
+}
+
+.skill-card:hover .skill-icon {
+  transform: scale(1.3) rotateY(15deg);
+  filter: drop-shadow(0 0 15px rgba(56,189,248,0.6));
+  animation: iconPulse 1s ease-in-out infinite;
+}
+
+@keyframes iconPulse {
+  0%, 100% {
+    transform: scale(1.3) rotateY(15deg);
+  }
+  50% {
+    transform: scale(1.4) rotateY(15deg);
+  }
+}
+
+/* Skill Name Movement */
+.skill-name {
+  transition: all 0.3s ease;
+  transform: translateY(0);
+}
+
+.skill-card:hover .skill-name {
+  transform: translateY(-4px);
+  color: var(--accent-blue);
+  text-shadow: 0 0 10px rgba(56,189,248,0.5);
+}
+
+/* Category Badge Movement */
+.skill-category {
+  transition: all 0.3s ease;
+  opacity: 0.7;
+}
+
+.skill-card:hover .skill-category {
+  opacity: 1;
+  transform: translateY(-2px);
+  color: #60a5fa;
+}
+
+/* Search and Filter Movement */
+.search-filter-container {
+  animation: slideInDown 0.8s ease-out;
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.search-input, .filter-select {
+  transition: all 0.3s ease;
+  border: 1.5px solid var(--accent-blue);
+}
+
+.search-input:focus, .filter-select:focus {
+  transform: scale(1.02);
+  box-shadow: 0 0 20px rgba(56,189,248,0.3);
+  border-color: #60a5fa;
+}
+
+/* Modal Movement */
+.skill-modal {
+  animation: modalSlideIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8) translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.modal-backdrop {
+  animation: backdropFadeIn 0.3s ease;
+}
+
+@keyframes backdropFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Progress Bar Animation */
+.progress-bar {
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-fill {
+  transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.progress-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  animation: progressShine 2s ease-in-out infinite;
+}
+
+@keyframes progressShine {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Responsive Movement Adjustments */
+@media (max-width: 768px) {
+  .skill-card:hover {
+    transform: translateY(-8px) scale(1.05);
+  }
+  
+  .skill-card:hover .skill-icon {
+    transform: scale(1.2) rotateY(10deg);
+  }
+  
+  section {
+    padding: 2.5rem 0;
+  }
+  
+  .card {
+    border-radius: 1rem;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-blue);
+  border-radius: 4px;
+}
+
+@keyframes fadeInUp {
+  from { 
+    opacity: 0; 
+    transform: translateY(30px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.8s cubic-bezier(0.4,0,0.2,1);
+}
