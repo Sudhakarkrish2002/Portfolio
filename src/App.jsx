@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Navigation from './components/layout/Navigation';
+import Header from './components/layout/Header';
 import Home from './components/pages/Home';
 import About from './components/pages/About';
 import Skills from './components/pages/Skills';
@@ -16,7 +16,7 @@ function App() {
 
   return (
     <div className="min-h-screen bg-black text-white font-sans">
-      <Navigation />
+      <Header />
       <Home />
       <About />
       <Skills />
