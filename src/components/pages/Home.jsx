@@ -38,21 +38,20 @@ const downloadResume = () => {
         </svg>
       </div>
 
-      <div className="hero-content" style={{ position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', minHeight: '180px' }}>
+      <div className="relative flex flex-col items-center text-center min-h-[180px]">
         <img 
           src="/images/Avatar_image-portfolio.svg" 
           alt="Professional Avatar" 
-          className="hero-avatar"
-          style={{ width: '180px', height: '180px', borderRadius: '50%', objectFit: 'cover', boxShadow: '0 0 0 8px rgba(56,189,248,0.10), 0 8px 32px rgba(56,189,248,0.25)', border: '6px solid #fff', position: 'absolute', top: '0px', left: '50%', transform: 'translateX(-50%)', zIndex: 2 }}
+          className="w-36 h-36 md:w-44 md:h-44 rounded-full object-cover border-[6px] border-white shadow-[0_0_0_8px_rgba(56,189,248,0.10),0_8px_32px_rgba(56,189,248,0.25)] absolute top-0 left-1/2 -translate-x-1/2 z-10"
         />
-        <div style={{ paddingTop: '190px' }}></div>
+        <div className="pt-40 md:pt-48"></div>
         <h1 className="hero-title">Sudhakar N</h1>
         <p className="hero-subtitle">Full-Stack Developer</p>
         <p className="hero-description">
           MERN Full Stack Developer & AI Integrator dedicated to building intelligent, scalable, and visually engaging solutions.<br/>
           Passionate about innovation—combining AI and modern web technologies to deliver future-ready applications.
         </p>
-        <div className="hero-buttons" style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' }}>
+        <div className="hero-buttons flex justify-center gap-4 flex-wrap">
           <Button variant="primary" size="lg" onClick={downloadResume}>
             Download Resume
           </Button>

@@ -51,8 +51,8 @@ const Contact = () => {
 
   return (
     <Section id="contact" title="Get In Touch">
-      <div className="grid lg:grid-cols-2 gap-12">
-        <div className="card p-8">
+      <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
+        <div className="card p-6 md:p-8">
           <h3 className="text-2xl font-semibold mb-6 text-blue-300">Send Message</h3>
           <form onSubmit={handleContactSubmit} className="space-y-6">
             <input
@@ -103,7 +103,7 @@ const Contact = () => {
           </form>
         </div>
         <div className="space-y-6">
-          <div className="card p-8">
+          <div className="card p-6 md:p-8">
             <h3 className="text-2xl font-semibold mb-6 text-blue-300">Contact Information</h3>
             <div className="space-y-4">
               <div className="flex items-center">
@@ -124,7 +124,7 @@ const Contact = () => {
               </div>
             </div>
           </div>
-          <div className="card p-8">
+          <div className="card p-6 md:p-8">
             <h3 className="text-2xl font-semibold mb-6 text-blue-300">Connect With Me</h3>
             <SocialLinks variant="contact" />
           </div>

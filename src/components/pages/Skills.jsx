@@ -255,11 +255,11 @@ const Skills = () => {
         </select>
       </div>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 md:gap-6">
         {filteredSkills.map((skill) => (
           <div 
             key={skill.name} 
-            className="card flex flex-col items-center p-6 fade-in-up cursor-pointer skill-card"
+            className="card flex flex-col items-center p-4 sm:p-6 fade-in-up cursor-pointer skill-card"
             onClick={() => handleSkillClick(skill)}
           >
             {React.createElement(skill.icon, { 
@@ -281,7 +281,7 @@ const Skills = () => {
       {/* Skill Details Modal */}
       {showSkillModal && selectedSkill && (
         <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 modal-backdrop">
-          <div className="card max-w-md w-full p-6 relative skill-modal">
+          <div className="card max-w-md w-full p-4 sm:p-6 relative skill-modal">
             <button
               onClick={closeModal}
               className="absolute top-4 right-4 text-gray-400 hover:text-white text-2xl transition-colors"
