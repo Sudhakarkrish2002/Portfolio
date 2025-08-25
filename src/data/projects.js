@@ -1,11 +1,11 @@
 export const projects = [
   {
     id: 1,
-    title: "Organic Mart",
+    title: "Organic Hub",
     description: "A comprehensive e-commerce platform for organic products, featuring user authentication, product management, shopping cart functionality, and secure payment integration with modern UI/UX design.",
-    image: "/images/Organic Hub thumbnail.png",
+    image: "/images/Organic-Hub-Thumbnail.png",
     technologies: ["React", "Node.js", "Express.js", "MongoDB", "Tailwind CSS", "Redux"],
-    liveLink: "https://organic-mart-frontend.vercel.app/",
+    liveLink: "https://organic-hub-frontend.vercel.app/",
     githubLink: "https://github.com/Sudhakarkrish2002/Organic-Hub---frontend",
     backendRepo: "https://github.com/Sudhakarkrish2002/Organic-Hub--Backend",
     featured: true
@@ -16,7 +16,7 @@ export const projects = [
     description: "A modern, responsive portfolio website showcasing professional skills, projects, and contact information with smooth animations and excellent UI/UX design.",
     image: "/images/portfolio thumbnail.png",
     technologies: ["React", "Node.js", "Express.js", "MongoDB", "Tailwind CSS", "Framer Motion"],
-    liveLink: "https://portfolio-five-iota-w8s2nm20s1.vercel.app/",
+    liveLink: "https://portfolio-eight-inky-11.vercel.app/",
     githubLink: "https://github.com/Sudhakarkrish2002/Portfolio",
     backendRepo: "https://github.com/Sudhakarkrish2002/portfolio-backend",
     featured: true
