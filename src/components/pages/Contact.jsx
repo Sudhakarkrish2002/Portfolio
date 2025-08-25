@@ -23,9 +23,14 @@ const Contact = () => {
     
     try {
       console.log('Sending contact form data:', data);
-      const response = await fetch('http://localhost:5002/api/contact', {
+      
+      // Updated backend URL - check if your backend is running on port 3000
+      const response = await fetch('http://localhost:3000/api/contact', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
         body: JSON.stringify(data),
       });
       
@@ -42,7 +47,16 @@ const Contact = () => {
       }
     } catch (error) {
       console.error('Contact form error:', error);
-      setSubmitStatus({ type: 'error', message: `Failed to send message: ${error.message}` });
+      
+      // Better error handling
+      let errorMessage = 'Failed to send message. ';
+      if (error.name === 'TypeError' && error.message.includes('fetch')) {
+        errorMessage += 'Please check if the backend server is running on port 3000.';
+      } else {
+        errorMessage += error.message;
+      }
+      
+      setSubmitStatus({ type: 'error', message: errorMessage });
       setTimeout(() => setSubmitStatus(null), 5000);
     } finally {
       setIsSubmitting(false);
@@ -50,7 +64,7 @@ const Contact = () => {
   };
 
   return (
-    <Section id="contact" title="Get In Touch">
+    <Section id="contact" title="Get In Touch" className="pb-16 md:pb-20">
       <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
         <div className="card p-6 md:p-8">
           <h3 className="text-2xl font-semibold mb-6 text-blue-300">Send Message</h3>
@@ -98,7 +112,7 @@ const Contact = () => {
               disabled={isSubmitting}
               className="w-full"
             >
-              Send Message
+              {isSubmitting ? 'Sending...' : 'Send Message'}
             </Button>
           </form>
         </div>

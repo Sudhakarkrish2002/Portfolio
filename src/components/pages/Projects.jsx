@@ -4,6 +4,21 @@ import Button from '../common/Button';
 import { projects } from '../../data/projects';
 
 const Projects = () => {
+  const handleImageError = (e, projectTitle) => {
+    console.error(`Failed to load image for ${projectTitle}: ${e.target.src}`);
+    e.target.style.display = 'none';
+    // Show a fallback placeholder
+    const container = e.target.parentElement;
+    container.innerHTML = `
+      <div class="w-full h-full flex items-center justify-center bg-gray-800 text-gray-400">
+        <div class="text-center">
+          <div class="text-4xl mb-2">📷</div>
+          <div class="text-sm">${projectTitle}</div>
+        </div>
+      </div>
+    `;
+  };
+
   return (
     <Section id="projects" title="Featured Projects">
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
@@ -16,6 +31,7 @@ const Projects = () => {
                   src={project.image} 
                   alt={project.title}
                   className="w-full h-full object-cover object-center transition-transform duration-300 hover:scale-105"
+                  onError={(e) => handleImageError(e, project.title)}
                 />
               </div>
               <h3 className="text-lg font-bold text-blue-400 text-center mt-2 mb-2">{project.title}</h3>

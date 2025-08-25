@@ -4,6 +4,24 @@ import SocialLinks from '../common/SocialLinks';
 import { contactInfo, technologies } from '../../data/contactInfo';
 
 const Footer = () => {
+  // Smooth scroll function
+  const scrollToSection = (sectionId) => {
+    try {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ 
+          behavior: 'smooth',
+          block: 'start'
+        });
+        console.log(`Scrolling to ${sectionId} section`);
+      } else {
+        console.warn(`Section ${sectionId} not found`);
+      }
+    } catch (error) {
+      console.error('Scroll error:', error);
+    }
+  };
+
   return (
     <footer className="py-12 border-t border-blue-400 bg-black/95">
       <div className="max-w-6xl mx-auto px-6">
@@ -23,11 +41,11 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold text-blue-300 mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              <li><a href="#home" className="text-gray-300 hover:text-blue-400 transition-colors">Home</a></li>
-              <li><a href="#about" className="text-gray-300 hover:text-blue-400 transition-colors">About</a></li>
-              <li><a href="#skills" className="text-gray-300 hover:text-blue-400 transition-colors">Skills</a></li>
-              <li><a href="#projects" className="text-gray-300 hover:text-blue-400 transition-colors">Projects</a></li>
-              <li><a href="#contact" className="text-gray-300 hover:text-blue-400 transition-colors">Contact</a></li>
+              <li><button onClick={() => scrollToSection('home')} className="text-gray-300 hover:text-blue-400 transition-colors bg-transparent border-none cursor-pointer text-left">Home</button></li>
+              <li><button onClick={() => scrollToSection('about')} className="text-gray-300 hover:text-blue-400 transition-colors bg-transparent border-none cursor-pointer text-left">About</button></li>
+              <li><button onClick={() => scrollToSection('skills')} className="text-gray-300 hover:text-blue-400 transition-colors bg-transparent border-none cursor-pointer text-left">Skills</button></li>
+              <li><button onClick={() => scrollToSection('projects')} className="text-gray-300 hover:text-blue-400 transition-colors bg-transparent border-none cursor-pointer text-left">Projects</button></li>
+              <li><button onClick={() => scrollToSection('contact')} className="text-gray-300 hover:text-blue-400 transition-colors bg-transparent border-none cursor-pointer text-left">Contact</button></li>
             </ul>
           </div>
 

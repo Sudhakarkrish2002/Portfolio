@@ -1,221 +1,101 @@
-// import React, { useState, useEffect } from 'react';
-
-// const MobileMenu = () => {
-//   const [open, setOpen] = useState(false);
-//   const [activeLink, setActiveLink] = useState('#home');
-
-//   useEffect(() => {
-//     if (open) {
-//       document.body.style.overflow = 'hidden';
-//     } else {
-//       document.body.style.overflow = 'unset';
-//     }
-//     return () => {
-//       document.body.style.overflow = 'unset';
-//     };
-//   }, [open]);
-
-//   useEffect(() => {
-//     const sections = document.querySelectorAll('section[id]');
-//     const observer = new IntersectionObserver((entries) => {
-//       entries.forEach(entry => {
-//         if (entry.isIntersecting) {
-//           setActiveLink(`#${entry.target.id}`);
-//         }
-//       });
-//     }, { rootMargin: '-50% 0px -50% 0px' });
-
-//     sections.forEach(section => observer.observe(section));
-//     return () => sections.forEach(section => observer.unobserve(section));
-//   }, []);
-
-//   const navLinks = [
-//     { href: '#home', label: 'Home' },
-//     { href: '#about', label: 'About' },
-//     { href: '#skills', label: 'Skills' },
-//     { href: '#projects', label: 'Projects' },
-//     { href: '#contact', label: 'Contact' },
-//   ];
-
-//   return (
-//     <>
-//       <button
-//         className="md:hidden fixed top-4 right-4 z-50 flex flex-col justify-around w-8 h-8 bg-blue-400/80 hover:bg-blue-500/80 backdrop-blur-sm p-2 rounded-full border-2 border-blue-400 shadow-lg focus:outline-none"
-//         onClick={() => setOpen(!open)}
-//         aria-label="Toggle menu"
-//         aria-expanded={open}
-//       >
-//         <span className={`block h-0.5 w-full bg-white transform transition duration-300 ease-in-out ${open ? 'rotate-45 translate-y-[5px]' : ''}`}></span>
-//         <span className={`block h-0.5 w-full bg-white transform transition duration-300 ease-in-out ${open ? 'opacity-0' : ''}`}></span>
-//         <span className={`block h-0.5 w-full bg-white transform transition duration-300 ease-in-out ${open ? '-rotate-45 -translate-y-[5px]' : ''}`}></span>
-//       </button>
-      
-//       <div
-//         className={`fixed top-0 right-0 h-full w-56 bg-[#0a0a0a]/90 backdrop-blur-lg text-white z-40 transform transition-transform duration-300 ease-in-out ${open ? 'translate-x-0 shadow-2xl' : 'translate-x-full'} md:hidden`}
-//       >
-//         <nav className="flex flex-col h-full justify-center items-start space-y-2 text-lg font-semibold pt-16 p-6">
-//           {navLinks.map((link, index) => (
-//             <a 
-//               key={link.href}
-//               href={link.href} 
-//               onClick={() => setOpen(false)} 
-//               className={`w-full text-left px-4 py-3 rounded-md transition-all duration-300 no-underline transform ${activeLink === link.href ? 'text-blue-300 bg-blue-500/20' : 'text-gray-300 hover:text-white hover:bg-white/10'} ${open ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-5'}`}
-//               style={{ transitionDelay: open ? `${150 + index * 50}ms` : '0ms' }}
-//             >
-//               {link.label}
-//             </a>
-//           ))}
-//         </nav>
-//       </div>
-      
-//       {open && (
-//         <div
-//           className="fixed inset-0 bg-black/40 z-30 md:hidden"
-//           onClick={() => setOpen(false)}
-//         />
-//       )}
-//     </>
-//   );
-// };
-
-// export default MobileMenu;
-
-// 
-
-// import React, { useState } from "react";
-
-// const MobileMenu = () => {
-//   const [open, setOpen] = useState(false);
-
-//   const navLinks = [
-//     { href: "#home", label: "Home" },
-//     { href: "#about", label: "About" },
-//     { href: "#skills", label: "Skills" },
-//     { href: "#projects", label: "Projects" },
-//     { href: "#contact", label: "Contact" },
-//   ];
-
-//   return (
-//     <div className="relative">
-//       {/* Hamburger */}
-//       <button
-//         onClick={() => setOpen(true)}
-//         aria-label="Open menu"
-//         className="md:hidden fixed top-4 right-4 z-50 h-10 w-10 
-//                    flex flex-col justify-between p-2 
-//                    rounded-lg bg-blue-600 text-white shadow-md"
-//       >
-//         <span className="h-0.5 w-full bg-white" />
-//         <span className="h-0.5 w-full bg-white" />
-//         <span className="h-0.5 w-full bg-white" />
-//       </button>
-
-//       {/* Overlay */}
-//       {open && (
-//         <div
-//           onClick={() => setOpen(false)}
-//           className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40"
-//         />
-//       )}
-
-//       {/* Sidebar Menu */}
-//       <div
-//         className={`fixed top-0 right-0 h-full text-center w-52 
-//                     bg-slate-900 text-white shadow-xl z-50
-//                     transform transition-transform duration-300
-//                     ${open ? "translate-x-0" : "translate-x-full"}`}
-//       >
-//         {/* Close button */}
-//         <div className="flex justify-end p-4">
-//           <button
-//             onClick={() => setOpen(false)}
-//             className="text-white text-3xl font-bold hover:text-red-400 transition"
-//             aria-label="Close menu"
-//           >
-//             ✕
-//           </button>
-//         </div>
-
-//         {/* Nav Links */}
-//         <nav className="flex flex-col gap-6 p-6">
-//           {navLinks.map((link) => (
-//             <a
-//               key={link.href}
-//               href={link.href}
-//               onClick={() => setOpen(false)}
-//               className="block text-lg font-medium rounded-md px-3 py-2 
-//                          hover:bg-blue-600 transition"
-//             >
-//               {link.label}
-//             </a>
-//           ))}
-//         </nav>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default MobileMenu;
-
-
-
 import React, { useState, useEffect } from "react";
+import { FaHome, FaUser, FaCode, FaFolder, FaEnvelope } from "react-icons/fa";
 
 const MobileMenu = () => {
   const [open, setOpen] = useState(false);
 
   const navLinks = [
-    { href: "#home", label: "Home" },
-    { href: "#about", label: "About" },
-    { href: "#skills", label: "Skills" },
-    { href: "#projects", label: "Projects" },
-    { href: "#contact", label: "Contact" },
+    { id: "home", label: "Home", icon: FaHome },
+    { id: "about", label: "About", icon: FaUser },
+    { id: "skills", label: "Skills", icon: FaCode },
+    { id: "projects", label: "Projects", icon: FaFolder },
+    { id: "contact", label: "Contact", icon: FaEnvelope },
   ];
+
+  // Smooth scroll function
+  const scrollToSection = (sectionId) => {
+    try {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ 
+          behavior: 'smooth',
+          block: 'start'
+        });
+        console.log(`Scrolling to ${sectionId} section`);
+      } else {
+        console.warn(`Section ${sectionId} not found`);
+      }
+    } catch (error) {
+      console.error('Scroll error:', error);
+    }
+  };
 
   // Prevent body scroll when menu is open
   useEffect(() => {
     if (open) {
-      document.body.style.overflow = "hidden"; // disable scroll + overflow
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = "auto"; // reset
+      document.body.style.overflow = "auto";
     }
+    
+    // Cleanup function to reset overflow when component unmounts
+    return () => {
+      document.body.style.overflow = "auto";
+    };
   }, [open]);
 
+  // Close menu when screen size changes to desktop
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768) { // md breakpoint
+        setOpen(false);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
-    <div className="relative">
-      {/* Hamburger */}
+    <>
+      {/* Hamburger Button - Only visible on mobile */}
       <button
         onClick={() => setOpen(true)}
         aria-label="Open menu"
-        className="md:hidden fixed top-4 right-4 z-50 h-10 w-10 
-                   flex flex-col justify-between p-2 
-                   rounded-lg bg-blue-600 text-white shadow-md"
+        className="md:hidden fixed top-4 right-4 z-[60] h-10 w-10 
+                   flex flex-col justify-center items-center gap-1 p-1.5 
+                   rounded-lg bg-gradient-to-r from-blue-400 to-blue-500 text-white shadow-lg hover:shadow-xl
+                   hover:from-blue-500 hover:to-blue-600 transition-all duration-300 transform hover:scale-105
+                   border border-blue-300"
       >
-        <span className="h-0.5 w-full bg-white" />
-        <span className="h-0.5 w-full bg-white" />
-        <span className="h-0.5 w-full bg-white" />
+        <span className="h-0.5 w-5 bg-white rounded-full transition-all duration-300" />
+        <span className="h-0.5 w-5 bg-white rounded-full transition-all duration-300" />
+        <span className="h-0.5 w-5 bg-white rounded-full transition-all duration-300" />
       </button>
 
-      {/* Overlay */}
+      {/* Overlay - Only visible on mobile when menu is open */}
       {open && (
         <div
           onClick={() => setOpen(false)}
-          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40"
+          className="md:hidden fixed inset-0 bg-black/50 z-[55]"
         />
       )}
 
-      {/* Sidebar */}
+      {/* Simple Mobile Menu */}
       <div
-        className={`fixed top-0 right-0 h-full w-[80%] sm:w-64 
-                    bg-slate-900 text-white shadow-xl z-50 
-                    transform transition-transform duration-300
+        className={`md:hidden fixed top-0 right-0 h-full w-64 
+                    bg-white shadow-2xl z-[65] 
+                    transform transition-all duration-300 ease-in-out
                     ${open ? "translate-x-0" : "translate-x-full"}`}
       >
-        {/* Close Button */}
-        <div className="flex justify-end p-4">
+        {/* Header */}
+        <div className="flex justify-between items-center p-4 border-b border-gray-200">
+          <h2 className="text-lg font-semibold text-gray-800">Menu</h2>
           <button
             onClick={() => setOpen(false)}
-            className="text-white text-3xl font-bold hover:text-red-400 transition"
+            className="h-8 w-8 flex items-center justify-center
+                       rounded-full bg-gray-200 text-gray-600 
+                       hover:bg-gray-300 transition-all duration-300"
             aria-label="Close menu"
           >
             ✕
@@ -223,21 +103,30 @@ const MobileMenu = () => {
         </div>
 
         {/* Nav Links */}
-        <nav className="flex flex-col gap-6 p-6">
+        <nav className="p-4">
           {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              onClick={() => setOpen(false)}
-              className="block text-lg font-medium rounded-md px-3 py-2 
-                         hover:bg-blue-600 transition"
+            <button
+              key={link.id}
+              onClick={() => {
+                scrollToSection(link.id);
+                setOpen(false);
+              }}
+              className="flex items-center w-full px-4 py-3 mb-2
+                         text-left transition-all duration-300
+                         hover:bg-blue-50 bg-white hover:text-blue-600
+                         rounded-lg text-gray-700"
             >
-              {link.label}
-            </a>
+              {React.createElement(link.icon, { 
+                className: "text-lg mr-3" 
+              })}
+              <span className="font-medium">
+                {link.label}
+              </span>
+            </button>
           ))}
         </nav>
       </div>
-    </div>
+    </>
   );
 };
 

@@ -17,7 +17,7 @@ const Skills = () => {
       color: '#61DAFB',
       category: 'Frontend',
       proficiency: 90,
-      experience: '2+ years',
+      experience: '1+ year',
       description: 'Building interactive user interfaces with React hooks, context, and modern patterns.',
       projects: ['E-Commerce Platform', 'Portfolio Website', 'Task Management App']
     },
@@ -27,7 +27,7 @@ const Skills = () => {
       color: '#764ABC',
       category: 'Frontend',
       proficiency: 85,
-      experience: '1.5+ years',
+      experience: '1+ year',
       description: 'State management with Redux Toolkit, implementing complex data flows.',
       projects: ['E-Commerce Platform', 'Real-time Dashboard']
     },
@@ -37,7 +37,7 @@ const Skills = () => {
       color: '#339933',
       category: 'Backend',
       proficiency: 88,
-      experience: '2+ years',
+      experience: '1+ year',
       description: 'Server-side development with Express.js, REST APIs, and middleware.',
       projects: ['E-Commerce Backend', 'API Gateway', 'Authentication Service']
     },
@@ -47,7 +47,7 @@ const Skills = () => {
       color: '#fff',
       category: 'Backend',
       proficiency: 85,
-      experience: '2+ years',
+      experience: '1+ year',
       description: 'Building RESTful APIs, middleware, and server-side logic.',
       projects: ['E-Commerce API', 'User Management System']
     },
@@ -57,7 +57,7 @@ const Skills = () => {
       color: '#47A248',
       category: 'Database',
       proficiency: 85,
-      experience: '2+ years',
+      experience: '1+ year',
       description: 'NoSQL database design, aggregation pipelines, and optimization.',
       projects: ['E-Commerce Database', 'Analytics Platform']
     },
@@ -67,7 +67,7 @@ const Skills = () => {
       color: '#880000',
       category: 'Database',
       proficiency: 80,
-      experience: '1.5+ years',
+      experience: '1+ year',
       description: 'MongoDB ODM with schema validation and middleware.',
       projects: ['User Management', 'Content Management System']
     },
@@ -77,7 +77,7 @@ const Skills = () => {
       color: '#F7DF1E',
       category: 'Language',
       proficiency: 92,
-      experience: '3+ years',
+      experience: '1+ year',
       description: 'ES6+, async/await, functional programming, and modern JS patterns.',
       projects: ['All Projects', 'Custom Libraries', 'Automation Scripts']
     },
@@ -87,7 +87,7 @@ const Skills = () => {
       color: '#E34F26',
       category: 'Frontend',
       proficiency: 95,
-      experience: '3+ years',
+      experience: '1+ year',
       description: 'Semantic HTML, accessibility, and modern web standards.',
       projects: ['All Web Projects', 'Landing Pages']
     },
@@ -97,7 +97,7 @@ const Skills = () => {
       color: '#1572B6',
       category: 'Frontend',
       proficiency: 90,
-      experience: '3+ years',
+      experience: '1+ year',
       description: 'Responsive design, animations, and modern CSS techniques.',
       projects: ['All Web Projects', 'Design Systems']
     },
@@ -107,7 +107,7 @@ const Skills = () => {
       color: '#06B6D4',
       category: 'Frontend',
       proficiency: 85,
-      experience: '1.5+ years',
+      experience: '1+ year',
       description: 'Utility-first CSS framework for rapid UI development.',
       projects: ['Portfolio Website', 'Admin Dashboard']
     },
@@ -137,7 +137,7 @@ const Skills = () => {
       color: '#F05032',
       category: 'Tools',
       proficiency: 85,
-      experience: '2+ years',
+      experience: '1+ year',
       description: 'Version control, branching strategies, and collaboration.',
       projects: ['All Projects', 'Team Collaboration']
     },
@@ -147,7 +147,7 @@ const Skills = () => {
       color: '#fff',
       category: 'Tools',
       proficiency: 85,
-      experience: '2+ years',
+      experience: '1+ year',
       description: 'Code hosting, CI/CD, and project management.',
       projects: ['All Projects', 'Open Source Contributions']
     },
@@ -157,7 +157,7 @@ const Skills = () => {
       color: '#CB3837',
       category: 'Tools',
       proficiency: 90,
-      experience: '2+ years',
+      experience: '1+ year',
       description: 'Package management and dependency handling.',
       projects: ['All Projects', 'Custom Packages']
     },
@@ -177,7 +177,7 @@ const Skills = () => {
       color: '#FF6C37',
       category: 'Tools',
       proficiency: 80,
-      experience: '1.5+ years',
+      experience: '1+ year',
       description: 'API testing, documentation, and collaboration.',
       projects: ['API Development', 'Testing Automation']
     },
