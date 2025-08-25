@@ -25,7 +25,7 @@ const Contact = () => {
       console.log('Sending contact form data:', data);
       
       // Updated backend URL - check if your backend is running on port 3000
-      const response = await fetch('https://portfolio-backend-1-840a.onrender.com//api/contact', {
+      const response = await fetch('https://portfolio-backend-1-840a.onrender.com/api/contact', {
         method: 'POST',
         headers: { 
           'Content-Type': 'application/json',
