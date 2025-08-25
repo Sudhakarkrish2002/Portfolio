@@ -6,8 +6,8 @@ export const projects = [
     image: "/images/Organic Hub thumbnail.png",
     technologies: ["React", "Node.js", "Express.js", "MongoDB", "Tailwind CSS", "Redux"],
     liveLink: "https://organic-mart-frontend.vercel.app/",
-    githubLink: "https://github.com/Sudhakarkrish2002/Organic-Mart-Frontend",
-    backendRepo: "https://github.com/Sudhakarkrish2002/Organic-Mart-Backend",
+    githubLink: "https://github.com/Sudhakarkrish2002/Organic-Hub---frontend",
+    backendRepo: "https://github.com/Sudhakarkrish2002/Organic-Hub--Backend",
     featured: true
   },
   {
@@ -16,9 +16,9 @@ export const projects = [
     description: "A modern, responsive portfolio website showcasing professional skills, projects, and contact information with smooth animations and excellent UI/UX design.",
     image: "/images/portfolio thumbnail.png",
     technologies: ["React", "Node.js", "Express.js", "MongoDB", "Tailwind CSS", "Framer Motion"],
-    liveLink: "https://sudhakar-portfolio.vercel.app/",
-    githubLink: "https://github.com/Sudhakarkrish2002/Portfolio-Frontend",
-    backendRepo: "https://github.com/Sudhakarkrish2002/Portfolio-Backend",
+    liveLink: "https://portfolio-five-iota-w8s2nm20s1.vercel.app/",
+    githubLink: "https://github.com/Sudhakarkrish2002/Portfolio",
+    backendRepo: "https://github.com/Sudhakarkrish2002/portfolio-backend",
     featured: true
   },
   {
